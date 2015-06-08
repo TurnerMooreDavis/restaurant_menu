@@ -15,6 +15,10 @@
   <%= @dish.description %>
 </p>
 
+<p>
+  <strong>Course:</strong>
+  <%= Course.find_by_id(@dish.course_id).name %>
+</p>
 <%= link_to 'New Dish', new_dish_path %> |
 <%= link_to 'Edit', edit_dish_path(@dish) %> |
 <%= link_to 'Menu', dishes_path %>

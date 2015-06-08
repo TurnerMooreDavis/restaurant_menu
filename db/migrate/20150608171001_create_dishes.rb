@@ -4,6 +4,7 @@ class CreateDishes < ActiveRecord::Migration
       t.string :name
       t.float :price
       t.string :description
+      t.integer :course_id
 
       t.timestamps null: false
     end

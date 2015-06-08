@@ -4,6 +4,7 @@ class DishesController < ApplicationController
   # GET /dishes
   # GET /dishes.json
   def index
+    @courses = Course.all
     @dishes = Dish.all
   end
 
@@ -69,6 +70,6 @@ class DishesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dish_params
-      params.require(:dish).permit(:name, :price, :description)
+      params.require(:dish).permit(:name, :price, :description, :course_id)
     end
 end
