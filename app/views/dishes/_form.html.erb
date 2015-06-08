@@ -24,8 +24,7 @@
     <%= f.text_field :description %>
   </div>
   <div class="field">
-    <%= f.label :course_id %><br>
-    <%= f.collection_select :course_id, Course.all, :id, :name, {include_blank:true} %>
+    <%= f.hidden_field :course_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

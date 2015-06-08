@@ -11,11 +11,12 @@ class DishesController < ApplicationController
   # GET /dishes/1
   # GET /dishes/1.json
   def show
+    redirect_to url_for(:action => :edit)
   end
 
   # GET /dishes/new
   def new
-    @dish = Dish.new
+    @dish = Dish.new(course_id: params[:course_id])
   end
 
   # GET /dishes/1/edit
