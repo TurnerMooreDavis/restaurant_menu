@@ -1,33 +1,24 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Dishes</h1>
-<% @courses.each do |course| %>
-<table class=.table>
-  <thead>
-
-<tr><h2><%= course.name %></h2></tr>
-
-    <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div id="main_container" class="container">
+  <h1>Listing Dishes</h1>
+  <% @courses.each do |course| %>
+    <h2><%= course.name %></h2>
+    <div class = "row">
+      <div class = "col-md-3">Name</div>
+      <div class = "col-md-6">Description</div>
+      <div class = "col-md-1">Price</div>
+      <div class = "col-md -2">Actions</div>
+    </div>
     <% course.dishes.each do |dish| %>
-      <tr>
-        <td><%= dish.name %></td>
-        <td><%= dish.price %></td>
-        <td><%= dish.description %></td>
-        <td><%= link_to 'Edit', edit_dish_path(dish) %></td>
-      </tr>
+      <div class= "row">
+        <div class = "col-md-3"><%= dish.name %></div>
+        <div class = "col-md-6"><%= dish.description %></div>
+        <div class = "col-md-1"><%= dish.price %></div>
+        <div class = "col-md-2"><%= link_to 'Edit', edit_dish_path(dish) %></div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-<%= link_to 'New Dish', new_dish_path(course_id: course.id) %>
-<% end %>
-
+    <%= link_to 'New Dish', new_dish_path(course_id: course.id) %>
+  <% end %>
+</div>
 
 <br>
